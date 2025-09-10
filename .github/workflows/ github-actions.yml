@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            JAR_FILE=$(ls /home/runner/work/SomeTestProj/SomeTestProj/target/*.jar | head -n 1)
+            JAR_FILE=$(ls /home/runner/work/SomeTestProj/target/*.jar | head -n 1)
             scp -o StrictHostKeyChecking=no $JAR_FILE ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/opt/myapp/app.jar
 
             systemctl restart myapp.service
