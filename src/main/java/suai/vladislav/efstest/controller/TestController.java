@@ -11,6 +11,6 @@ public class TestController {
 
     @GetMapping()
     public TestDto test() {
-        return new TestDto(1, "test", "descUpdated");
+        return new TestDto(1, "test", "descUpdated2");
     }
 }
